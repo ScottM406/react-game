@@ -4,12 +4,11 @@ const Home = () => {
   return (
     <div id="home-block">
       <h1>Astray Among the Stars</h1>
-      <h2>About</h2>
-      <h2>Release Notes</h2>
-      <h2>Register</h2>
-      <h2>Login</h2>
+      <Link to="about">About</Link>
+      <Link to="releasenotes">Release Notes</Link>
+      <Link to="register">Register</Link>
+      <Link to="login">Login</Link>
       <h2>PLAY</h2>
-      <Link></Link>
     </div>
   )
 }
