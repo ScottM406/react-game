@@ -1,0 +1,20 @@
+body {
+  background-color: bisque;
+}
+
+#home-block {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  background-color: rgb(4, 21, 36);
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  color: whitesmoke;
+  border: 4px whitesmoke outset;
+  a {
+    text-decoration: none;
+    color: inherit;
+    margin: 2% auto;
+  }
+}
