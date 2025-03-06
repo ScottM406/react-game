@@ -8,7 +8,7 @@ const prisma = new PrismaClient().$extends({
         const hashedPassword = await bcrypt.hash(password, 10);
         const userData = {
           email,
-          password
+          password: hashedPassword
         }
 
         const user = await prisma.user.create({
