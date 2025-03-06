@@ -12,3 +12,95 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  savedGames GameSave[]
+}
+
+model GameSave {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userID], references: [id])
+  userID Int
+  character Character?
+  ships Ship[]
+  pets Pet[]
+}
+
+model Character {
+  gameSave GameSave @relation(fields: [gameSaveID], references: [id])
+  gameSaveID Int @unique @id
+  name String
+  race Race @relation(fields: [raceID], references: [name])
+  raceID String
+  background CharacterBackground @relation(fields: [backgroundID], references: [name])
+  backgroundID String
+  hitPoints Int
+  abilityPoints Int
+  strength Int
+  charisma Int
+  ingenuity Int
+  agility Int
+  constitution Int
+  perception Int
+  armor Int
+  attackPowerMelee Int
+  attackPowerRanged Int
+  battleLuck Int
+  planetLuck Int
+  spaceLuck Int
+  karma Int
+}
+
+model Ship {
+  id Int @id
+  gameSave GameSave @relation(fields: [gameSaveID], references: [id])
+  gameSaveID Int
+  hullHealth Int
+  navFuntion Int
+  commFunction Int
+  attackPower Int
+  cargoCapacity Int
+  kenels Int
+}
+
+model Pet {
+  id Int @id
+  gameSave GameSave @relation(fields: [gameSaveID], references: [id])
+  gameSaveID Int
+  name String
+  hitPoints Int
+  attackPower Int
+  battleLuck Int
+  planetLuck Int
+  affection Int
+}
+
+model Race {
+  name String @id
+  characters Character[]
+  homePlanet String
+  description String
+  size Int
+  maxSpeed Int
+  strengthBonus Int
+  charismaBonus Int
+  ingenuityBonus Int
+  agilityBonus Int
+  constitutionBonus Int
+  perceptionBonus Int
+}
+
+model CharacterBackground {
+  name String @id
+  characters Character[]
+  description String
+  strengthBonus Int
+  charismaBonus Int
+  ingenuityBonus Int
+  agilityBonus Int
+  constitutionBonus Int
+  perceptionBonus Int
+}
