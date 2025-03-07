@@ -1,7 +1,16 @@
 body {
-  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  background-image: url('./assets/homepage-bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
 }
-
 
 #register-form {
   margin-top: 7%;
@@ -19,7 +28,6 @@ body {
 .home-block {
   display: flex;
   flex-direction: column;
-  margin: 20% auto;
   background-color: rgb(4, 21, 36);
   width: 800px;
   height: 600px;
