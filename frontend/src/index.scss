@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-#register-form {
+.register-login-form {
   margin-top: 7%;
   display: flex;
   flex-direction: column;
@@ -43,13 +43,19 @@ body {
   .play-button {
     font-size: 40px;
     width: 25%;
+    height: 51.78px;
     align-self: center;
     margin-top: 5%;
     margin-bottom: 10%;
     cursor: pointer;
   }
-  .register-login-button {
-    margin-top: 8%;
+  #register-button {
+    margin-top: 9%;
+    font-size: 40px;
+    width: 25%;
+  }
+  #login-button {
+    margin-top: 18%;
     font-size: 40px;
     width: 25%;
   }
