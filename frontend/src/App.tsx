@@ -5,6 +5,7 @@ import About from "./components/About.tsx";
 import ReleaseNotes from "./components/ReleaseNotes.tsx";
 import Register from "./components/Register.tsx";
 import Login from "./components/Login.tsx";
+import MyStats from "./components/MyStats.tsx";
 
 const App: React.FC = () => {
   const [token, setToken] = useState<string>("")
@@ -14,8 +15,9 @@ const App: React.FC = () => {
       <Route path="/" element={<Home token={token}/>}/>
       <Route path="about" element={<About />}/>
       <Route path="releasenotes" element={<ReleaseNotes />}/>
+      <Route path="mystats" element={<MyStats />}/>
       <Route path="register" element={<Register token={token} setToken={setToken}/>}/>
-      <Route path="login" element={<Login />}/>
+      <Route path="login" element={<Login token={token} setToken={setToken}/>}/>
     </Routes>
   )
 }

@@ -43,7 +43,7 @@ const Register: React.FC<RegisterProps> = ({ token, setToken }) => {
     <div className="home-block">
       <h1>Register</h1>
       { !token ? 
-        <form id="register-form" onSubmit={registerNewUser}>
+        <form className="register-login-form" onSubmit={registerNewUser}>
           <label htmlFor="register-email-input">Email:</label>
           <input 
           name="email"
@@ -74,7 +74,7 @@ const Register: React.FC<RegisterProps> = ({ token, setToken }) => {
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
-          <button className="register-login-button" type="submit">Register</button>
+          <button id="register-button" type="submit">Register</button>
           <Link className="home-block-back-link" to="/" >Back to home</Link>
         </form>
       : <h2 id="registration-thank-you">Thank you for registering! You will be redirected momentarily.</h2>}
