@@ -49,6 +49,16 @@ body {
     margin-bottom: 10%;
     cursor: pointer;
   }
+  .inactive-play-button {
+      font-size: 40px;
+      width: 25%;
+      height: 51.78px;
+      align-self: center;
+      margin-top: 5%;
+      margin-bottom: 10%;
+      background-color: gray;
+      cursor:not-allowed;
+    }
   #register-button {
     margin-top: 9%;
     font-size: 40px;
