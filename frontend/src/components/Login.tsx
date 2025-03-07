@@ -31,10 +31,8 @@ const Login: React.FC<LoginProps> = ({ token, setToken }) => {
         throw new Error(e.message || "Something has gone wrong. Please try again later");
       }
   };
-  console.log(email, password)
 
   token && setTimeout(() => { navigate("/") }, 1500)
-
 
   return (
     <div className="home-block">
