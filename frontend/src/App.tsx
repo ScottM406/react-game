@@ -15,7 +15,7 @@ const App: React.FC = () => {
       <Route path="about" element={<About />}/>
       <Route path="releasenotes" element={<ReleaseNotes />}/>
       <Route path="register" element={<Register token={token} setToken={setToken}/>}/>
-      <Route path="login" element={<Login />}/>
+      <Route path="login" element={<Login token={token} setToken={setToken}/>}/>
     </Routes>
   )
 }
