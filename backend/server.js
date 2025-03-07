@@ -9,6 +9,8 @@ app.use(express.json());
 
 app.use(cors({ origin: 'http://localhost:5173' }));
 
+app.use(require('./API/auth').router);
+
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
   next();
@@ -20,8 +22,8 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   console.log(err);
-  res.status(err.status && 500)
-  res.json(err.message && "Internal Server Error.")
+  res.status(err.status || 500)
+  res.json(err.message || "Internal Server Error.")
 });
 
 app.listen(PORT, () => {
