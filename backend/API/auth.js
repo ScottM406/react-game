@@ -36,10 +36,10 @@ router.post("/register", async (req, res, next) => {
   }
 });
 
-router.post("login", async (req, res, next) => {
+router.post("/login", async (req, res, next) => {
   const { email, password } = req.body;
   try {
-    const user = await prisma.user.login( email, password);
+    const user = await prisma.user.login(email, password);
     const token = createToken(user.id);
     const id = user.id;
     res.json({ token, id })
